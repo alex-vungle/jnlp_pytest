@@ -28,9 +28,7 @@ pipeline
             steps
             {
                 sh '''
-                    pytest --version
-                    pip3 list
-                    allure --version
+                    pytest test_foo.py
                 '''
             }
         }
