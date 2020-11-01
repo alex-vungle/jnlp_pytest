@@ -40,7 +40,7 @@ pipeline
             steps{
                 sh '''
                     export ALLURE_HOME=/allure-2.12.0
-                    export PAHT="${ALLURE_HOME}"/bin:$PATH
+                    export PATH="${ALLURE_HOME}"/bin:$PATH
                     echo $PATH
                 '''
                 script {
