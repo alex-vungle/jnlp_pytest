@@ -22,13 +22,16 @@ pipeline
             defaultContainer 'testrunner'            
         }
     }
+    environment {
+        ALLURE_RESULT_PATH = './target/allure-result'
+    }
     stages{
         stage('Foo') 
         {
             steps
             {
                 sh '''
-                    pytest test_foo.py
+                    pytest test_foo.py --alluredir=${ALLURE_RESULT_PATH} || true
                 '''
             }
         }
