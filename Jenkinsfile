@@ -4,20 +4,8 @@ pipeline
     {
         kubernetes
         {
-            yaml '''
-                apiVersion: v1
-                kind: Pod
-                metadata:
-                  name: testrunner
-                spec:
-                  containers:
-                  - name: testrunner
-                    image: sqli0189/jnlp-agent-pytest:latest
-                    command:
-                    - cat
-                    tty: true
-            '''
-            defaultContainer 'testrunner'            
+            yamlFile 'KubernetesPod.yaml'
+            defaultContainer 'pytest'            
         }
     }
     environment {

@@ -11,4 +11,5 @@ RUN pip3 install -r packages.txt
 
 ADD https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/$ALLURE_VERSION/allure-commandline-$ALLURE_VERSION.tgz /
 RUN tar -zxvf /allure-commandline-$ALLURE_VERSION.tgz
-ENV PATH="/allure-$ALLURE_VERSION:${PATH}"
+RUN rm allure-commandline-$ALLURE_VERSION.tgz
+ENV PATH /allure-$ALLURE_VERSION/bin:$PATH
