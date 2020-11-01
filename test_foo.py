@@ -17,3 +17,6 @@ class Test_ABC:
 
    def test_c(self):
        print("------->test_c")
+
+   def test_d(self):
+       print("------->test_d")
