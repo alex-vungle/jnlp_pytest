@@ -30,9 +30,7 @@ pipeline
             {
                 sh '''
                     pytest test_foo.py --alluredir=${ALLURE_RESULT_PATH} || true
-                    ls -al ${ALLURE_RESULT_PATH}
                     chmod -R o+xw ${ALLURE_RESULT_PATH}
-                    ls -al ${ALLURE_RESULT_PATH}
                 '''
             }
         }
