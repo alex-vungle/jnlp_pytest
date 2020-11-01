@@ -19,7 +19,7 @@ pipeline
                   imagePullSecrets:
                     - name: vungleregistrykey
             '''
-            defaultContainer 'test_runner'            
+            defaultContainer 'test-runner'            
         }
     }
     stages{
