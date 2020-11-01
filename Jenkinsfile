@@ -8,10 +8,10 @@ pipeline
                 apiVersion: v1
                 kind: Pod
                 metadata:
-                  name: testRunner
+                  name: testrunner
                 spec:
                   containers:
-                  - name: testRunner
+                  - name: testrunner
                     image: sqli0189/jnlp-agent-pytest:latest
                     command:
                     - cat
@@ -19,7 +19,7 @@ pipeline
                   imagePullSecrets:
                     - name: vungleregistrykey
             '''
-            defaultContainer 'testRunner'            
+            defaultContainer 'testrunner'            
         }
     }
     stages{
