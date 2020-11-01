@@ -26,13 +26,25 @@ pipeline
         ALLURE_RESULT_PATH = './target/allure-result'
     }
     stages{
-        stage('Foo') 
+        stage('Execute Automation Test') 
         {
             steps
             {
                 sh '''
                     pytest test_foo.py --alluredir=${ALLURE_RESULT_PATH} || true
                 '''
+            }
+        }
+        stage('Generate allure report') {
+            steps{
+                script {
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'target/allure-result']]])
+                }
             }
         }
     }
