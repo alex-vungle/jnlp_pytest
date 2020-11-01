@@ -38,11 +38,6 @@ pipeline
         }
         stage('Generate Allure Report') {
             steps{
-                sh '''
-                    export ALLURE_HOME=/allure-2.13.6
-                    export PATH="${ALLURE_HOME}"/bin:$PATH
-                    echo $PATH
-                '''
                 script {
                     allure([
                         includeProperties: false,
