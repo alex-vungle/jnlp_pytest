@@ -16,8 +16,7 @@ pipeline
                     command:
                     - cat
                     tty: true
-                  imagePullSecrets:
-                    - name: vungleregistrykey
+                    runAsUser: 0
             '''
             defaultContainer 'testrunner'            
         }
